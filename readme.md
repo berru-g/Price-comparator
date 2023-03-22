@@ -1,5 +1,7 @@
 ## Comparateur de prix .py
 
+    pip install tkinter, requests, BeautifulSoup
+
 ### Scrapping de produit et comparaison des prix.
 
 ## Scrapp

@@ -40,7 +40,7 @@ def search():
     location = location_entry.get()
     
     #https://www.amazon.fr/s?k=arduino+component&language=fr_FR&crid=AQBXL9USLKCE&linkCode=sl2&linkId=1ab2135daf6e0bded135d63b11fbba40&sprefix=%2Caps%2C290&tag=makeandplay24-21&ref=as_li_ss_tl# search firstsite.com  # bug de la requete 'location', essaie d'inverser lieux et motcles comme dans lurl dorigine, puis change l'ordre de format, product, location= sans succes
-    firstsite_url = "https://www.amazon.fr/s?k={}" # 'location' not taken into account. because not "=" in url? 
+    firstsite_url = "https://www.amazon.fr/s?k={}&language=fr_FR&tag=makeandplay24-21" # 'location' not taken into account. because not "=" in url? 
     firstsite_search = requests.get(firstsite_url.format(product,location))
     firstsite_soup = BeautifulSoup(firstsite_search.text, "html.parser")
     firstsite_titles = firstsite_soup.find_all(class_="a-size-base-plus a-color-base a-text-normal")
@@ -96,73 +96,21 @@ def search():
     print("resultat third site")
     time.sleep(1) 
       
-"""# Comparaison des prices
-def compare_prices(price_list):
-    
-    latest_price = None
-    for price_str in price_list:
-        price = math.strptime(price_str, '%Y-%m-%d')
-        if latest_price is None or price > latest_price:
-            latest_price = price
-    return latest_price.strftime('%Y-%m-%d')
+print("Fin du scrap")
 
+"""# def compare price 
+def get_cheapest_price(soup):
+    prices = soup.select('.price')
     if prices:
-        latest_price = compare_prices(prices)
-        print("La dernière price trouvée sur le site de recherche est:", latest_price)
-
-    if secondsite_prices:
-        latest_price = compare_prices(secondsite_prices)
-        print("La dernière price trouvée sur le premier site est:", latest_price)
-
-    if thirdsite_prices:
-        latest_price = compare_prices(thirdsite_prices)
-        print("La dernière price trouvée sur le troisième site est:", latest_price)
-     
+        # Trie les prix par ordre croissant et renvoie le premier
+        return sorted(prices, key=lambda x: float(x.text))[0]
+    return None
+cheapest_price = get_cheapest_price(firstsite_soup)
+if cheapest_price:
+    print('Le prix le moins cher est:', cheapest_price.text)
+else:
+    print('Aucun prix n\'a été trouvé')
 """
-print("price comparator")
-"""
-class Price:
-    def __init__(self, price):
-        self.price = price
-
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-def compare_prices(price_list):
-    min_price = math.inf
-    max_price = -math.inf
-    for price_obj in price_list:
-        price = price_obj.price
-        if price < min_price:
-            min_price = price
-        if price > max_price:
-            max_price = price
-    return (min_price, max_price)
-
-# Créer quelques instances de la classe Price
-p1 = Price(10)
-p2 = Price(20)
-p3 = Price(5)
-
-# Créer quelques instances de la classe Product
-prod1 = Product("Produit 1", p1)
-prod2 = Product("Produit 2", p2)
-prod3 = Product("Produit 3", p3)
-
-# Créer une liste de prix
-price_list = [prod1.price, prod2.price, prod3.price]
-
-# Comparer les prix
-(min_price, max_price) = compare_prices(price_list)
-
-# Imprimer les résultats
-print("Le prix minimum est", min_price)
-print("Le prix maximum est", max_price)
-
-"""
-
 search_button = tk.Button(root, text="Rechercher", command=search)
 search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 

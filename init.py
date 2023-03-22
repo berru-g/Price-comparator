@@ -119,7 +119,8 @@ def compare_prices(price_list):
         print("La dernière price trouvée sur le troisième site est:", latest_price)
      
 """
-
+print("price comparator")
+"""
 class Price:
     def __init__(self, price):
         self.price = price
@@ -160,7 +161,7 @@ price_list = [prod1.price, prod2.price, prod3.price]
 print("Le prix minimum est", min_price)
 print("Le prix maximum est", max_price)
 
-
+"""
 
 search_button = tk.Button(root, text="Rechercher", command=search)
 search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)

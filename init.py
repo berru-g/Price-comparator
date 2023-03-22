@@ -18,13 +18,13 @@ title_color = "#1d3557"
 subtitle_color = "#2a9d8f"
 price_color = "#f4a261"
 
-product_label = tk.Label(root, text="Rechercher produit:", foreground="#f1faee")
+product_label = tk.Label(root, text="Price:", foreground="#f1faee")
 product_label.grid(row=1, column=0, padx=10, pady=10)
 product_label.config(bg="#1d3557")
 product_entry = tk.Entry(root)
 product_entry.grid(row=0, column=1, padx=10, pady=10)
 
-location_label = tk.Label(root, text="price", foreground="#f1faee")
+location_label = tk.Label(root, text="Recherche Produit", foreground="#f1faee")
 location_label.grid(row=0, column=0, padx=10, pady=10)
 location_label.config(bg="#1d3557")
 location_entry = tk.Entry(root)
@@ -48,7 +48,8 @@ def search():
     prices = firstsite_soup.find_all(class_="a-price-whole")
     results_text.delete('1.0', tk.END)  # Effacer le contenu de la zone de texte des résultats précédents
     results_text.insert(tk.END, "Résultats de la recherche AMAZON:\n\n", "blue")
-    results_text.tag_configure("blue", foreground="#1d3557")
+    results_text.tag_configure("blue", foreground="#1d3557", font=("Arial", 14))
+
     for title, subtitle, price in zip(firstsite_titles, subtitles, prices):
         results_text.insert(tk.END, f"{title.text}\n", "title")
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
@@ -68,7 +69,8 @@ def search():
     secondsite_subtitles = secondsite_soup.find_all(class_="manhattan--trade--2PeJIEB")#md:tw-text-xlOld tw-text-2xlOld tw-leading-[1.625rem]
     secondsite_prices = secondsite_soup.find_all(class_="manhattan--price-sale--1CCSZfK")
     results_text.insert(tk.END, "Résultats de la recherche ALIEXPRESS:\n\n", "blue")
-    results_text.tag_configure("blue", foreground="#1d3557")
+    results_text.tag_configure("blue", foreground="#1d3557", font=("Arial", 14))
+
     for title, subtitle, price in zip(secondsite_titles, secondsite_subtitles, secondsite_prices):
         results_text.insert(tk.END, f"{title.text}\n", "title")
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
@@ -84,7 +86,8 @@ def search():
     thirdsite_subtitles = thirdsite_soup.find_all(class_="s-item__shipping s-item__logisticsCost")
     thirdsite_prices = thirdsite_soup.find_all(class_="s-item__price")
     results_text.insert(tk.END, "Résultats de la recherche EBAY:\n\n", "blue")
-    results_text.tag_configure("blue", foreground="#1d3557")
+    results_text.tag_configure("blue", foreground="#1d3557", font=("Arial", 14))
+
     for title, subtitle, price in zip(thirdsite_titles, thirdsite_subtitles, thirdsite_prices):
         results_text.insert(tk.END, f"{title.text}\n", "title")
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")

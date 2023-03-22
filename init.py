@@ -99,6 +99,7 @@ def search():
     time.sleep(0.5) 
       
 print("Fin du scrap")
+print("Compare...")
 
 """
 def compare():
@@ -131,7 +132,27 @@ def compare():
             results_text.insert(tk.END, f"{lowest_price.text}\n", "price")
 """
 
-print("saut de fonction")        
+"""
+def get_cheapest_price(soup):
+    prices = soup.select('.price')
+    if prices:
+        # Trie les prix par ordre croissant et renvoie le premier
+        return sorted(prices, key=lambda x: float(x.text))[0]
+    return None
+
+secondsite_url ="https://fr.aliexpress.com/w/wholesale-{}.html?&SearchText={}"               
+secondsite_search = requests.get(secondsite_url.format(product_entry,product_entry))
+secondsite_soup = BeautifulSoup(secondsite_search.text, "html.parser")
+secondsite_prices = secondsite_soup.find_all(class_="manhattan--price-sale--1CCSZfK")
+
+cheapest_price = get_cheapest_price(secondsite_prices)
+if cheapest_price:
+    print('Le prix le moins cher est:', cheapest_price.text)
+else:
+    print('Aucun prix n\'a été trouvé')
+"""
+
+print("Fin du programme")        
 search_button = tk.Button(root, text="Rechercher", command=search)
 search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 

@@ -5,13 +5,19 @@
 
 ### Scrapping de produit et comparaison des prix.
 
+## inti.py =
 ## Scrapp
 
     - Amazon
     - Aliexpress
     - Ebay
 
-#### Passer par un env virtuel comme VM
+## init-test.py =
+## Scrap Ebay & get_lowest_price
+
+    - Ebay (only w i p...)
+
+#### *Passer par un env virtuel comme VM*
 
 
 <img width="499" alt="Capture d'écran_20230322_091500" src="https://user-images.githubusercontent.com/61543927/226840798-690cbe0c-2c4e-495e-b361-176182685559.png">

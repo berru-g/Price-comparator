@@ -1,8 +1,16 @@
-"""   Price-comparator
-      Learn python 
-      github/berru-g 23 
-"""
-import re
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+        
+<body onload="brython()">
+    
+
+<script type="text/python">
 import tkinter as tk
 import time
 import math
@@ -90,14 +98,7 @@ def search():
     thirdsite_prices = thirdsite_soup.find_all(class_="s-item__price")
     results_text.insert(tk.END, "Résultats de la recherche EBAY:\n\n", "blue")
     results_text.tag_configure("blue", foreground="#1d3557", font=("Arial", 14))
-    # Extraire les prix du troisième site
-    thirdsite_prices = thirdsite_soup.find_all(class_="s-item__price")
 
-# Obtenir le prix minimum
-    lowest_price = get_lowest_price(thirdsite_prices)
-
-# Afficher le prix minimum
-    print(f"Le prix minimum est {lowest_price}")
     for title, subtitle, price in zip(thirdsite_titles, thirdsite_subtitles, thirdsite_prices):
         results_text.insert(tk.END, f"{title.text}\n", "title")
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
@@ -107,60 +108,7 @@ def search():
     time.sleep(0.5) 
       
 print("Fin du scrap")
-
 print("Compare...")
-
-def get_lowest_price(prices):
-    # Initialisation de la variable du prix minimum
-    min_price = float('inf')
-    
-    # Boucle pour extraire chaque prix
-    for price in prices:
-        # Extraire les chiffres du prix en utilisant une expression régulière
-        price_digits = re.findall('\d+\.\d+', price.text)
-        if price_digits:
-            # Convertir les chiffres en float et comparer au prix minimum
-            float_price = float(price_digits[0])
-            if float_price < min_price:
-                min_price = float_price
-    
-    # Retourner le prix minimum
-    return min_price
-
-
-
-
-"""
-def compare():
-    secondsite_url ="https://fr.aliexpress.com/w/wholesale-{}.html?&SearchText={}"               
-    secondsite_search = requests.get(secondsite_url.format(product_entry,product_entry))
-    secondsite_soup = BeautifulSoup(secondsite_search.text, "html.parser")
-    secondsite_titles = secondsite_soup.find_all(class_="manhattan--titleText--WccSjUS")
-    secondsite_subtitles = secondsite_soup.find_all(class_="manhattan--trade--2PeJIEB")#md:tw-text-xlOld tw-text-2xlOld tw-leading-[1.625rem]
-    secondsite_prices = secondsite_soup.find_all(class_="manhattan--price-sale--1CCSZfK") 
-    response = requests.get(secondsite_url)
-    # Trouver tous les éléments avec la balise "price"
-    prices = firstsite_soup.find_all('price')
-    # Initialiser le prix le plus bas à None
-    lowest_price = None
-    # Parcourir tous les prix trouvés
-    for price in prices:
-        # Extraire le contenu du prix (en supposant que ce soit un nombre)
-        price_value = float(price.text.strip())
-            # Si le prix le plus bas n'a pas encore été initialisé
-        if lowest_price is None:
-            lowest_price = price_value
-            # Sinon, si le prix actuel est plus bas que le prix le plus bas trouvé jusqu'à présent
-        elif price_value < lowest_price:
-            lowest_price = price_value
-            # Afficher le prix le plus bas trouvé
-        print('Le prix le plus bas est:', lowest_price)
-        # Analyser le contenu HTML de la réponse avec BeautifulSoup
-        firstsite_soup = BeautifulSoup(response.text, 'html.parser')
-        for title, subtitle, price in zip(secondsite_prices):
-            results_text.insert(tk.END, f"{lowest_price.text}\n", "price")
-"""
-
 
 print("Fin du programme")        
 search_button = tk.Button(root, text="Rechercher", command=search)
@@ -168,3 +116,9 @@ search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
 
 
 root.mainloop()
+
+
+    </script>
+
+</body>
+</html>

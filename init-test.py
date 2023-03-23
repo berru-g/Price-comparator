@@ -33,8 +33,7 @@ results_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 def get_lowest_price(prices):
     # Initialisation de la variable du prix minimum
-    min_price = float('inf')
-    
+    min_price = float('inf')   
     # Boucle pour extraire chaque prix
     for price in prices:
         # Extraire les chiffres du prix en utilisant une expression régulière
@@ -43,8 +42,7 @@ def get_lowest_price(prices):
             # Convertir les chiffres en float et comparer au prix minimum
             float_price = float(price_digits[0])
             if float_price < min_price:
-                min_price = float_price
-    
+                min_price = float_price  
     # Retourner le prix minimum
     return min_price
 
@@ -69,6 +67,7 @@ def search():
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
+    #affichage result 
     firstsite_min_price = get_lowest_price(prices)
     results_text.insert(tk.END, f"Prix minimum sur Ebay: {firstsite_min_price}\n\n", "blue")
     # Applique les couleurs
@@ -77,7 +76,7 @@ def search():
     results_text.tag_config("price", foreground=price_color)
     print("resultat first site")
     time.sleep(0.5)
-"""    
+    
 # Scrapper------------------------ le second site
     secondsite_url = "https://www.amazon.fr/s?k={}"
     secondsite_search = requests.get(secondsite_url.format(product))
@@ -94,6 +93,7 @@ def search():
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
+    #affichage result
     secondsite_min_price = get_lowest_price(prices)
     results_text.insert(tk.END, f"Prix minimum sur Amazon: {secondsite_min_price}\n\n", "blue")
     # Applique les couleurs
@@ -119,6 +119,7 @@ def search():
         results_text.insert(tk.END, f"{subtitle.text}\n", "subtitle")
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
+    #affichage result
     thirdsite_min_price = get_lowest_price(prices)
     results_text.insert(tk.END, f"Prix minimum sur AliExpress: {thirdsite_min_price}\n\n", "blue")
     # Applique les couleurs
@@ -127,7 +128,7 @@ def search():
     results_text.tag_config("price", foreground=price_color)
     print("resultat third site")
     time.sleep(0.5)
- """   
+   
     
 print("Fin du scrap")
 time.sleep(1)

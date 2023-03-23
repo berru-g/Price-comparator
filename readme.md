@@ -1,4 +1,5 @@
-## Comparateur de prix .py
+## Comparateur de prix .py 
+### *work in progress*
 
     pip install tkinter, requests, BeautifulSoup
 

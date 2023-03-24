@@ -31,3 +31,15 @@
 
 
 #### *Passer par un env virtuel comme VM*
+
+### Test App with [Django](https://docs.djangoproject.com/fr/4.1/intro/tutorial01/)
+
+mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+

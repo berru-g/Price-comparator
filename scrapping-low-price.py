@@ -8,6 +8,7 @@ import math
 import re
 import requests
 from bs4 import BeautifulSoup
+import webbrowser
 
 root = tk.Tk()
 root.title("Comparateur de prix")
@@ -77,7 +78,7 @@ def search():
     print("resultat first site")
     time.sleep(0.5)
     
-# Scrapper------------------------ le second site
+# Scrapper------------&tag=makeandplay24-21------------ le second site
     secondsite_url = "https://www.amazon.fr/s?k={}"
     secondsite_search = requests.get(secondsite_url.format(product))
     secondsite_soup = BeautifulSoup(secondsite_search.text, "html.parser")
@@ -136,6 +137,29 @@ print("Fin du programme")
        
 search_button = tk.Button(root, text="Rechercher", command=search)
 search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+
+print("Voulez-vous ouvrir une page web ?")
+
+# Poser une question fermée avec une réponse par oui ou non
+reponse_web = input()
+
+# Afficher un message en fonction de la réponse
+if reponse_web.lower() == "oui":
+    # Demander l'URL de la page web à ouvrir
+    print("Quelle est l'URL de la page web que vous souhaitez ouvrir ?")
+    url = input()
+    # Ouvrir la page web dans le navigateur par défaut
+    webbrowser.open(url)
+elif reponse_web.lower() == "non":
+    # Afficher un message si la réponse est "non"
+    print("Vous avez choisi de ne pas ouvrir de page web.")
+else:
+    # Afficher un message si la réponse n'est ni "oui" ni "non"
+    print("Je ne comprends pas votre réponse.")
+    print("Aide moi à améliorer cet outil, rdv sur github.com/berru-g")
+    
+time.sleep(1)
+
 
 
 root.mainloop()

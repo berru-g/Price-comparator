@@ -12,8 +12,8 @@ body {
   padding: 0;
   width: 100%;
   height: auto;
-  /*https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true
-  background-repeat: repeat-y;*/
+  /*https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true*/
+  background-repeat: no-repeat;
   background-image: url('src/body.png');
   background-size: 100%;
 }
@@ -187,6 +187,10 @@ iframe{
 }
 .links a {
 color: #0068b881;
+}
+.pub {
+  display: flex;
+  justify-content: space-between;
 }
 /* Footer */
 .footer {

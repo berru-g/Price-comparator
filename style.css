@@ -10,12 +10,12 @@ a {
 body {
   margin: 0;
   padding: 0;
-  height:100%;
-  width: auto;
-  /*https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true*/
+  width: 100%;
+  height: auto;
+  /*https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true
+  background-repeat: repeat-y;*/
   background-image: url('src/body.png');
- /* background-repeat: repeat-x;
-  background-size: 300px;*/
+  background-size: 100%;
 }
 /* Application de la classe d'animation 
 body {

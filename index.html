@@ -1,0 +1,156 @@
+<!--mardi soir_code non fonctionnel
+adapt to https://github.com/berru-g/Price-comparator
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Comparateur de prix</title>
+  <link rel="shortcut icon" href="src\logo-component-comparator.png" />
+
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  <meta name=description content="Votre produit au meilleur prix du marché actuel.">
+  <meta name=author content>
+  <meta name=keywords
+    content="price comparator, comparateur de prix, amazon prix bas, bon plan amazon, comparateur amazon">
+  <meta property=og:url content=https://github.com/berru-g />
+  <link rel=canonical href=https://github.com/berru-g />
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
+  </script>
+
+  <script src="node_modules\axios\dist\axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cheerio@1.0.0/dist/cheerio.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <a href="https://github.com/berru-g/">
+      <img id="logo" src="src\around-the-world.gif" alt="Component-comparator" title="component-comparator"> CC
+    </a>
+    <nav>
+      <select>
+
+        <a href="https://www.ebay.com/"><option value="https://www.Ebay.com/">Ebay</option></a>
+        <option value="https://www.amazon.com/">Amazon</option>
+        <option value="https://www.aliexpress.com/">AliExpress</option>
+
+      </select>
+    </nav>
+  </header>
+
+  <body>
+
+    <!-- categorie -->
+    <section class="categorie dark">
+      <main>
+
+        <div>
+          <input type="text" id="search-input" placeholder="Entrez le produit recherché:"
+            title="research price component">
+          <button id="searchButton">Comparer</button>
+        </div>
+
+        <!--  <form>
+    <input type="text" id="search-input">
+    <button type="button" id="search-button">Rechercher</button>
+  </form>-->
+
+        <div class="results" id="results" title="résultat de compararteur de composant">
+          <span class="name"></span>
+          <p class="site"></p>
+          <p class="price"></p>
+        </div>
+      </main>
+      <div class="content">
+        <h2>Welcome to the price comparator</h2>
+        <p>Price comparator is a tool for comparate price product on amazon, aliexpress and Ebay.
+          Create your tool at least expensive </p>
+        <a href="https://www.tindie.com/stores/makeandplay/" class="btn">
+          exemple project <i class=""></i>
+        </a>
+      </div>
+
+  </body>
+  <section class="links">
+    <div class="links-inner">
+      <ul>
+        <li>
+          <h3>Best price</h3>
+        </li>
+        <li><a href="https://amzn.to/3L8chkd">Arduino pro</a></li>
+        <li><a href="https://amzn.to/3FcckHU">Rasberry pico</a></li>
+        <li><a href="https://amzn.to/3mIl02t">Sensor</a></li>
+        <li><a href="#">Windows 10 apps</a></li>
+        <li><a href="#">Office apps</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>Arduino</h3>
+        </li>
+        <li><a href="#">Uno</a></li>
+        <li><a href="#">Méga</a></li>
+        <li><a href="#">Micro</a></li>
+        <li><a href="#">Pro micro</a></li>
+        <li><a href="#">Ftdi</a></li>
+      </ul>
+      <ul>
+        <li>
+          <h3>Education</h3>
+        </li>
+        <li><a href="#">Microsfot</a></li>
+        <li><a href="#">Office</a></li>
+        <li><a href="#">schools</a></li>
+        <li><a href="#">Deals for students</a></li>
+        <li><a href="#">Microsfot Azure</a></li>
+      </ul>
+      <!-- <ul>
+          <li><h3>Enterprise</h3></li>
+          <li><a href="#">Azure</a></li>
+          <li><a href="#">AppSource</a></li>
+          <li><a href="#">Automotive</a></li>
+          <li><a href="#">Government</a></li>
+          <li><a href="#">Healthcare</a></li>
+        </ul>
+        <ul>
+          <li><h3>Developer</h3></li>
+          <li><a href="#">Visual Studio</a></li>
+          <li><a href="#">Windowszs Dev Center</a></li>
+          <li><a href="#">Developer Network</a></li>
+          <li><a href="#">TechNet</a></li>
+          <li><a href="#">Microsoft Developer</a></li>
+        </ul>
+        <ul>
+          <li><h3>Company</h3></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About Microsoft</a></li>
+          <li><a href="#">Company news</a></li>
+          <li><a href="#">Privacy at Microsoft</a></li>
+          <li><a href="#">Inverstors</a></li>
+        </ul>-->
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><i class=""></i> Fr</div>
+      <ul>
+        <li><a href="#">Price comparator</a></li>
+        <li><a href="#">Help me</a></li>
+        <li><a href="https://github.com/berru-g/">Code src</a></li>
+        <li><a href="mailto:">Contact </a></li>
+        <li><a href="#">&copy; Lea Bruger 2023</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  </html>

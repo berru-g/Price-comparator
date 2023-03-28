@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #1017da;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height:auto;
+  background-image: url('https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true');
+  background-repeat: repeat-x;
+  background-size: 300px;
+}
+/* Application de la classe d'animation 
+body {
+  background-image: url(https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true);
+  background-size: cover;
+  background-position: center center;
+  animation-name: "wave";
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+Définition de la classe d'animation 
+@keyframes wave {
+  0% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(20deg);
+  }
+  100% {
+    transform: skewX(0deg);
+  }
+}*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333;
+  padding: 1rem;
+}
+
+#logo{
+  max-width: 3rem;
+  height: auto;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+header nav select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #fff;
+}
+
+main {
+  padding: 1rem;
+}
+
+input[type="text"] {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  margin-right: 1rem;
+  width: 80%;
+}
+
+#searchButton {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #1017da;
+  color: #fff;
+  cursor: pointer;
+}
+#searchButton:hover {
+  background-color: #fff;
+color:#1017da;
+}
+
+.results {
+  display: none;
+  margin-top: 2rem;
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, .4);    
+  color: black;
+  border-radius: 0.25rem;
+}
+
+.results {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result img {
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.result a {
+  color: black;
+  text-decoration: none;
+}
+
+.result span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+iframe{
+  
+  align-items: center;
+  margin-bottom:0%;
+  margin-left:center;     
+}
+
+/* categorie */
+.categorie {
+  width: 100%;
+  height: 100%;
+ /* background: url('') no-repeat center center/cover;
+  */
+  background-color: #0068b881;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.categorie .content {
+  width: 65%;
+  padding: 100px 0 0 30px;
+}
+.btn {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #fff;
+  color: #0068b881;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #68b881;
+  color: white;
+}
+/* Links */
+.links {
+  background: #fff;
+  color: #616161;
+  font-size: 12px;
+  padding: 35px 0;
+}
+
+.links-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.links li {
+  line-height: 2.8;
+}
+.links a {
+color: #0068b881;
+}
+/* Footer */
+.footer {
+  background: #3e3d3d;
+  color: #dbdbdb;
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer div {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.footer div i {
+  margin-right: 10px;
+}
+
+.footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  color: #dbdbdb;
+
+}
+
+.footer li {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #dbdbdb;
+}

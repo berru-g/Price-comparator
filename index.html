@@ -1,47 +1,38 @@
 <!--mardi soir_code non fonctionnel
 adapt to https://github.com/berru-g/Price-comparator
 -->
-
 <head>
   <meta charset="UTF-8">
   <title>Comparateur de prix</title>
   <link rel="shortcut icon" href="src\logo-component-comparator.png" />
-
   <meta name=viewport content="width=device-width, initial-scale=1">
-
   <meta name=description content="Votre produit au meilleur prix du marché actuel. Nous vous proposons de trouver l'article que vous voulez au meilleur prix, en cherchant simultanément sur trois sites. Gain de temps et d'énergie, économisez en cherchant ici vos produits.">
   <meta name=author content>
   <meta name=keywords
     content="comparateur de prix, amazon prix bas, bon plan amazon, comparateur amazon, meilleur prix">
   <meta property=og:url content=https://github.com/berru-g />
   <link rel=canonical href=https://github.com/berru-g />
-
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
   </script>
-
   <script src="node_modules\axios\dist\axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/cheerio@1.0.0/dist/cheerio.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-
 </head>
-
 <body>
-
   <header>
     <a href="https://github.com/berru-g/">
       <img id="logo" src="src\around-the-world.gif" alt="Component-comparator" title="price-comparator"> CC
     </a>
     <nav>
       <select>
-
-        <a href="https://amzn.to/3FXFhHM"><option value="#">Jeux vidéo</option></a>
         <option value="https://amzn.to/42JuoDp">High-tech</option>
+        <a href="https://amzn.to/3FXFhHM"><option value="#">Jeux vidéo</option></a>
         <option value="#">Bricolage</option>
         <a href="#"><option value="#">Jardin</option></a>
         <option value="#">Informatique</option>
@@ -52,28 +43,22 @@ adapt to https://github.com/berru-g/Price-comparator
         <a href="#"><option value="#">Santé</option></a>
         <option value="#">Sport</option>
         <option value="#">Comparer</option>
-
       </select>
     </nav>
   </header>
-
   <body>
-
     <!-- categorie -->
     <section class="categorie dark">
       <main>
-
         <div>
           <input type="text" id="search-input" placeholder="Entrez le produit recherché:"
             title="research product low price">
           <button id="searchButton">Comparer</button>
         </div>
-
         <!--  <form>
     <input type="text" id="search-input">
     <button type="button" id="search-button">Rechercher</button>
   </form>-->
-
         <div class="results" id="results" title="résultat de compararteur de composant">
           <span class="name"></span>
           <p class="site"></p>
@@ -86,8 +71,7 @@ adapt to https://github.com/berru-g/Price-comparator
         <a href="#" class="btn">
           commencer <i class=""></i>
         </a>
-      </div>
-      
+      </div>   
   </body>
   <section class="links">
     <div class="links-inner">
@@ -152,7 +136,6 @@ adapt to https://github.com/berru-g/Price-comparator
   <div class="pub">
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=8&p=12&l=ur1&category=amazon_business&banner=1C3QSD57GB1C45D29T82&f=ifr&linkID=80fb46e01264c126c464b9d3fda37df9&t=price-comberu-21&tracking_id=price-comberu-21" width="300" height="250" scrolling="no" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=8&p=12&l=ur1&category=frhandcrafted&banner=1H8MGVFMQFSW4MXVT982&f=ifr&linkID=7ce93ae52c020754972e2213c2c3fb44&t=price-comberu-21&tracking_id=price-comberu-21" width="300" height="250" scrolling="no" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-
   </div>
   <footer class="footer">
     <div class="footer-inner">
@@ -166,5 +149,4 @@ adapt to https://github.com/berru-g/Price-comparator
       </ul>
     </div>
   </footer>
-
   </html>

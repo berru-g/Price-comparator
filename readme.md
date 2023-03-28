@@ -3,9 +3,9 @@
 
     pip install tkinter, requests, BeautifulSoup
 
-### Scrapping de produit et comparaison des prix.
+### Scrapping de produit 
 
-## inti.py =
+## script\scrapping-ecommerce-interface.py =
 ## Scrapp
 
     - Amazon
@@ -18,8 +18,8 @@
 
 <img width="495" alt="Capture d'écran_20230322_091533" src="https://user-images.githubusercontent.com/61543927/226840846-52d4b4d1-e001-415f-92c3-f0032a4190eb.png">
 
-## init-test.py =
-## Scrap Ebay & get_lowest_price
+## script\scrapping-low-price-interface.py =
+## Scrap Ebay & get_lowest_price *non fonctionnel*
 
     - Ebay (only w i p...)
     
@@ -30,16 +30,52 @@
 
 
 
-#### *Passer par un env virtuel comme VM*
+#### *Passer par un env virtuel comme VM + VPN* Car le scrapp peut être sanctionné!
 
-### Test App with [Django](https://docs.djangoproject.com/fr/4.1/intro/tutorial01/)
 
-mysite/
-    manage.py
-    mysite/
-        __init__.py
-        settings.py
-        urls.py
-        asgi.py
-        wsgi.py
+
+
+### Logique 
+
+  
+
+```mermaid
+
+  
+
+sequenceDiagram
+
+  
+
+User ->> App: Search product?
+
+  
+
+S_1-->>S_2: Cherche?
+
+  
+
+S_1--x Compare: Selectionne!
+
+  
+
+Compare-x App: Lien affiliation!
+
+  
+
+Note right of S_2: Compare le prix,<br/>selectionne,<br/>Ajout lien aff,<br/>Envoie lien aff.
+
+
+  
+
+Compare-->>User: Achat?
+
+  
+
+```
+
+projet en cours:
+
+> Work in progress. [Involve](https://github.com/berru-g/).
+
 

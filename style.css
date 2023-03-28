@@ -10,11 +10,12 @@ a {
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height:auto;
-  background-image: url('https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true');
-  background-repeat: repeat-x;
-  background-size: 300px;
+  height:100%;
+  width: auto;
+  /*https://github.com/berru-g/Make-Play/blob/main/src/component.png?raw=true*/
+  background-image: url('src/body.png');
+ /* background-repeat: repeat-x;
+  background-size: 300px;*/
 }
 /* Application de la classe d'animation 
 body {
@@ -45,7 +46,7 @@ header {
   align-items: center;
   background-color: #ffffff;
   color: #333;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 #logo{

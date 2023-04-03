@@ -24,11 +24,11 @@ product_label.config(bg="#1d3557")
 product_entry = tk.Entry(root)
 product_entry.grid(row=0, column=1, padx=10, pady=10)
 
-prix_label = tk.Label(root, text="Recherche Produit", foreground="#f1faee")
+"""prix_label = tk.Label(root, text="Recherche Produit", foreground="#f1faee")
 prix_label.grid(row=0, column=0, padx=10, pady=10)
 prix_label.config(bg="#1d3557")
 prix_entry = tk.Entry(root)
-prix_entry.grid(row=1, column=1, padx=10, pady=10)
+prix_entry.grid(row=1, column=1, padx=10, pady=10)"""
 
 results_text = tk.Text(root)
 font_style = ("Helvetica", 12)
@@ -37,14 +37,14 @@ results_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 def search():
     product = product_entry.get()
-    prix = prix_entry.get()
+    #prix = prix_entry.get()
     
     #https://www.amazon.fr/s?k={}+component&language=fr_FR&crid=AQBXL9USLKCE&linkCode=sl2&linkId=1ab2135daf6e0bded135d63b11fbba40&sprefix=%2Caps%2C290&tag=makeandplay24-21&ref=as_li_ss_tl# search firstsite.com  # bug de la requete 'prix', essaie d'inverser lieux et motcles comme dans lurl dorigine, puis change l'ordre de format, product, prix= sans succes
     firstsite_url = "https://www.amazon.fr/s?k={}" # 'prix' not taken into account. because not "=" in url? 
     firstsite_search = requests.get(firstsite_url.format(product))
     firstsite_soup = BeautifulSoup(firstsite_search.text, "html.parser")
     firstsite_titles = firstsite_soup.find_all(class_="a-size-base-plus a-color-base a-text-normal")
-    subtitles = firstsite_soup.find_all(class_="a-size-mini a-spacing-none a-color-base s-line-clamp-2")
+    subtitles = firstsite_soup.find_all(class_="a-size-base")
     prices = firstsite_soup.find_all(class_="a-price-whole")
     results_text.delete('1.0', tk.END)  # Effacer le contenu de la zone de texte des résultats précédents
     results_text.insert(tk.END, "Résultats de la recherche AMAZON:\n\n", "blue")
@@ -82,7 +82,7 @@ def search():
     
     # Search thirdsite.com
     thirdsite_url ="https://www.ebay.fr/sch/i.html?&_nkw={}&_sacat=0"               
-    thirdsite_search = requests.get(thirdsite_url.format(product,prix))
+    thirdsite_search = requests.get(thirdsite_url.format(product))
     thirdsite_soup = BeautifulSoup(thirdsite_search.text, "html.parser")
     thirdsite_titles = thirdsite_soup.find_all(class_="s-item__title")
     thirdsite_subtitles = thirdsite_soup.find_all(class_="s-item__shipping s-item__logisticsCost")

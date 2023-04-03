@@ -32,7 +32,7 @@ font_style = ("Helvetica", 12)
 results_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 
-def get_lowest_price(prices):
+"""def get_lowest_price(prices):
     # Initialisation de la variable du prix minimum
     min_price = float('inf')   
     # Boucle pour extraire chaque prix
@@ -45,7 +45,7 @@ def get_lowest_price(prices):
             if float_price < min_price:
                 min_price = float_price  
     # Retourner le prix minimum
-    return min_price
+    return min_price"""
 
 
 def search():
@@ -69,8 +69,8 @@ def search():
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
     #affichage result 
-    firstsite_min_price = get_lowest_price(prices)
-    results_text.insert(tk.END, f"Prix minimum sur Ebay: {firstsite_min_price}\n\n", "blue")
+    #firstsite_min_price = get_lowest_price(prices)
+    #results_text.insert(tk.END, f"Prix minimum sur Ebay: {firstsite_min_price}\n\n", "blue")
     # Applique les couleurs
     results_text.tag_config("title", foreground=title_color)
     results_text.tag_config("subtitle", foreground=subtitle_color)
@@ -83,7 +83,7 @@ def search():
     secondsite_search = requests.get(secondsite_url.format(product))
     secondsite_soup = BeautifulSoup(secondsite_search.text, "html.parser")
     secondsite_titles = secondsite_soup.find_all(class_="a-size-base-plus a-color-base a-text-normal")
-    second_subtitles = secondsite_soup.find_all(class_="a-size-mini a-spacing-none a-color-base s-line-clamp-2")
+    second_subtitles = secondsite_soup.find_all(class_="a-size-base")
     second_prices = secondsite_soup.find_all(class_="a-price-whole")
     #results_text.delete('1.0', tk.END)
     results_text.insert(tk.END, "Résultats de la recherche Amazon:\n\n", "blue")
@@ -95,8 +95,8 @@ def search():
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
     #affichage result
-    secondsite_min_price = get_lowest_price(prices)
-    results_text.insert(tk.END, f"Prix minimum sur Amazon: {secondsite_min_price}\n\n", "blue")
+    #secondsite_min_price = get_lowest_price(prices)
+    #results_text.insert(tk.END, f"Prix minimum sur Amazon: {secondsite_min_price}\n\n", "blue")
     # Applique les couleurs
     results_text.tag_config("title", foreground=title_color)
     results_text.tag_config("subtitle", foreground=subtitle_color)
@@ -121,8 +121,8 @@ def search():
         results_text.insert(tk.END, f"{price.text}\n", "price")
         results_text.insert(tk.END, "__________\n")
     #affichage result
-    thirdsite_min_price = get_lowest_price(prices)
-    results_text.insert(tk.END, f"Prix minimum sur AliExpress: {thirdsite_min_price}\n\n", "blue")
+    #thirdsite_min_price = get_lowest_price(prices)
+    #results_text.insert(tk.END, f"Prix minimum sur AliExpress: {thirdsite_min_price}\n\n", "blue")
     # Applique les couleurs
     results_text.tag_config("title", foreground=title_color)
     results_text.tag_config("subtitle", foreground=subtitle_color)
@@ -137,7 +137,7 @@ print("Fin du programme")
        
 search_button = tk.Button(root, text="Rechercher", command=search)
 search_button.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
-
+"""
 print("Voulez-vous ouvrir une page web ?")
 
 # Poser une question fermée avec une réponse par oui ou non
@@ -159,6 +159,6 @@ else:
     print("Aide moi à améliorer cet outil, rdv sur github.com/berru-g")
     
 time.sleep(1)
-
+"""
 
 root.mainloop()

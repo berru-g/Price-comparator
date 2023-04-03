@@ -2,7 +2,7 @@
       github/berru-g 23
 """
 #next step: interface web
-from pyautogui import sleep
+import time
 import requests
 from bs4 import BeautifulSoup
 
@@ -17,7 +17,7 @@ first_url = "https://www.amazon.fr/s?k={}"
 first_search = requests.get(first_url.format(product))
 first_soup = BeautifulSoup(first_search.text, "html.parser")
 first_titles = first_soup.find_all(class_="a-size-base-plus a-color-base a-text-normal")
-subtitles = first_soup.find_all(class_="a-size-mini a-spacing-none a-color-base s-line-clamp-2")
+subtitles = first_soup.find_all(class_="a-size-base")
 dates = first_soup.find_all(class_="a-price-whole")
 
 print("Résultats de la recherche sur Amazon:")
@@ -31,10 +31,8 @@ for title in first_titles:
             print(date.text)
             print("__________")
 
-
-sleep(1)
-
-
 print("Fin des résultats")
-
+print("Retrouvez les bon plans Amazon du moment")
+print("https://amzn.to/3m3Ol7n")
+time.sleep(4)
 exit()

@@ -1,4 +1,3 @@
-#Script à convertir en vbscript pour que la smala y ai accés.
 import webbrowser
 import time
 print('''
@@ -19,9 +18,9 @@ reponse_web = input()
 if reponse_web.lower() == "oui":
     webbrowser.open(url+product+lienAff)
 elif reponse_web.lower() == "non":
-    print("Vous avez choisi de ne pas ouvrir de page web.")
+    print("Vous avez choisi de ne pas ouvrir de page web. Bonne journée")
 else:
     print("Je ne comprends pas votre réponse.")
-    print("Aide moi à améliorer cet outil, rdv sur github.com/berru-g")
+    
     
 time.sleep(1)

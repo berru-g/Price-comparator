@@ -30,9 +30,9 @@ for title in first_titles:
             print(subtitle.text)
             print(date.text)
             print("__________")
-
+time.sleep(2)
 print("Fin des résultats")
-print("Retrouvez les bon plans Amazon du moment")
+print("Retrouvez les bons plans Amazon du moment")
 print("https://amzn.to/3m3Ol7n")
 time.sleep(4)
 exit()

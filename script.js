@@ -1,18 +1,19 @@
 //https://www.amazon.fr/s?k=ensemble+homme
-//import * as cheerio from "https://cdn.skypack.dev/cheerio@1.0.0-rc.12";
-//import * as nodeFetch from "https://cdn.skypack.dev/node-fetch@3.3.1";
+
+import cheerio from 'cheerio'
+//import nodeFetch from 'node-fetch'
 
 const cheerio = require('cheerio');
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 // function to get the raw data
-const getRawData = (URL) => {
+function getRawData(URL) {
    return fetch(URL)
       .then((response) => response.text())
       .then((data) => {
          return data;
       });
-};
+}
 
 // URL for data
 const URL = "https://en.wikipedia.org/wiki/Cricket_World_Cup";

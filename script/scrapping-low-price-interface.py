@@ -32,7 +32,7 @@ font_style = ("Helvetica", 12)
 results_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
 
-"""def get_lowest_price(prices):
+def get_lowest_price(prices):
     # Initialisation de la variable du prix minimum
     min_price = float('inf')   
     # Boucle pour extraire chaque prix
@@ -45,7 +45,7 @@ results_text.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
             if float_price < min_price:
                 min_price = float_price  
     # Retourner le prix minimum
-    return min_price"""
+    return min_price
 
 
 def search():

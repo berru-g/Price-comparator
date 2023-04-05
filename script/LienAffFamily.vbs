@@ -42,4 +42,3 @@ End If
 
 ' Pause pour donner à l'utilisateur le temps de lire le résultat
 WScript.Sleep 1000
-
